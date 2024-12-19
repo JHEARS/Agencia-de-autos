@@ -1,0 +1,95 @@
+{% extends 'layouts/base.html' %}
+
+{% load static%}
+
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido a AUTOSELECT</title>
+  <style>
+    /* Estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background: url("{% static 'autos.jpg'%}") no-repeat center center fixed; /* Imagen de fondo */
+      background-size: cover;
+      color: #fff;
+      padding: 0;
+      margin: 0;
+      transition: background 0.5s ease;
+    }
+
+    /* Sección principal */
+    .main-section {
+      color: white;
+      text-align: center;
+      padding: 150px 20px; /* Aumenté el padding para hacerlo más imponente */
+      backdrop-filter: blur(10px); /* Desenfoque de fondo */
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+      border-bottom: 5px solid #FFD700; /* Borde dorado para resaltar */
+    }
+
+    .main-section h2 {
+      font-size: 4em;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Sombra más fuerte */
+      animation: fadeIn 2s ease-out;
+      color: red; /* Color dorado para resaltar el título */
+    }
+
+    .main-section p {
+      font-size: 1.5em;
+      margin-top: 10px;
+      font-weight: 300;
+      animation: fadeIn 2.5s ease-out;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra más fuerte en el texto */
+      color: #800000;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+
+    /* Efectos para los textos */
+    h2, p {
+      animation: fadeIn 2s ease-out;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Sección principal -->
+  <section class="main-section">
+    <div class="welcome-text">
+      <h2>Bienvenido a AUTOSELECT: ¡Tu mejor opción para vehículos de calidad!</h2>
+      <p>La agencia líder en autos nuevos y seminuevos. Encuentra el vehículo de tus sueños a precios imbatibles.</p>
+    </div>
+  </section>
+
+</body>
+</html>
+
+
+
+{% endblock %}

@@ -1,0 +1,171 @@
+{% extends 'layouts/base.html' %}
+
+{% load static%}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Agencia de Autos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F5F5DC;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2 {
+            color: #0A74DA;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Sección de Servicios */
+        .services-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 50px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .service-card {
+            background-color: #fff;
+            width: 30%;
+            margin: 15px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.8em;
+            color: #0A74DA;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Despedida */
+        .goodbye-section {
+            background-color: #0A74DA;
+            color: white;
+            padding: 50px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        .goodbye-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .goodbye-section p {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .goodbye-section a {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #fff;
+            color: #0A74DA;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .goodbye-section a:hover {
+            background-color: #e0e0e0;
+            color: #0A74DA;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Servicios de Nuestra Agencia de Autos</h1>
+
+    <!-- Sección de servicios -->
+    <div class="services-section">
+        <!-- Servicio 1 -->
+        <div class="service-card">
+            <img src="{% static 'nuevo.jpg'%}" alt="Venta de Autos Nuevos">
+            <h3>Venta de Autos Nuevos</h3>
+            <p>Encuentra el auto de tus sueños entre nuestra variedad de autos nuevos, ¡con las mejores ofertas y financiamientos!</p>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="service-card">
+            <img src="{% static 'usado.jpg'%}" alt="Venta de Autos Usados">
+            <h3>Venta de Autos Usados</h3>
+            <p>Autos usados en excelente estado y a precios accesibles. Todos nuestros autos son revisados y certificados.</p>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="service-card">
+            <img src="{% static 'mantenimiento.jpg'%}" alt="Mantenimiento de Autos">
+            <h3>Servicio de Mantenimiento</h3>
+            <p>Te ayudamos a mantener tu auto en perfectas condiciones con nuestro servicio de mantenimiento especializado.</p>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="service-card">
+            <img src="{% static 'alquiler.jpg'%}"alt="Alquiler de Autos">
+            <h3>Alquiler de Autos</h3>
+            <p>Ofrecemos autos en alquiler para viajes, eventos o cualquier necesidad que tengas, con opciones flexibles y precios competitivos.</p>
+        </div>
+
+        <!-- Servicio 5 -->
+        <div class="service-card">
+            <img src="{% static 'financiamiento.jpg'%}" alt="Financiamiento de Autos">
+            <h3>Financiamiento de Autos</h3>
+            <p>Te ofrecemos planes de financiamiento adaptados a tus necesidades, para que puedas adquirir tu auto con facilidad.</p>
+        </div>
+
+        <!-- Servicio 6 -->
+        <div class="service-card">
+            <img src="{% static 'seguro.jpg'%}" alt="Servicio de Seguros">
+            <h3>Servicios de Seguros</h3>
+            <p>Protege tu auto con nuestros servicios de seguros, ofreciendo planes completos y a precios muy competitivos.</p>
+        </div>
+    </div>
+
+    <!-- Sección de despedida -->
+    <div class="goodbye-section">
+        <h2>¡Gracias por visitarnos!</h2>
+        <p>Nos encantaría que volvieras a visitarnos para conocer más sobre nuestras ofertas y servicios. ¡Te esperamos con los brazos abiertos!</p>
+        <a href="/">Volver al inicio</a>
+    </div>
+
+</body>
+
+</html>
+{% endblock %}

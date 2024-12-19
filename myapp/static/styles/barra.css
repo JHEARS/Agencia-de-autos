@@ -1,0 +1,113 @@
+/* General */
+body {
+    background: #202020;
+    color: whitesmoke;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegación */
+.navbar {
+    background: #333333; /* Color oscuro para la barra */
+    padding: 15px 30px; /* Tamaño de la barra (más espaciado) */
+    position: fixed; /* Barra fija */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%; /* Se extiende por todo el ancho */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave para profundidad */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+}
+
+/* Ajustes para los elementos dentro de la barra */
+.navbar ul {
+    display: flex;
+    justify-content: center; /* Centra los elementos */
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 25px; /* Espaciado entre los elementos */
+}
+
+.navbar ul li a {
+    color: #FFD700; /* Color dorado para los enlaces */
+    text-decoration: none;
+    font-size: 1.1em; /* Tamaño adecuado */
+    padding: 12px 20px;
+    border-radius: 5px; /* Bordes suaves */
+    transition: all 0.3s ease; /* Transición suave */
+    display: inline-block;
+}
+
+/* Efecto al pasar el ratón */
+.navbar ul li a:hover {
+    color: #333333; /* Cambia el color de texto */
+    background-color: #FFD700; /* Fondo dorado */
+    transform: scale(1.1); /* Aumento de tamaño */
+}
+
+/* Efecto cuando la barra se desplaza */
+.navbar.scrolled {
+    background: #1f1f1f; /* Cambia el fondo al hacer scroll */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 90px 20px 20px; /* Espaciado para que no choque con la barra fija */
+}
+
+/* Estilos para las tarjetas */
+.card {
+    background: #2a2a2a; /* Fondo oscuro */
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Levantar la tarjeta al pasar el ratón */
+}
+
+/* Input */
+.input {
+    background: #f5deb3;
+    padding: 12px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.input:focus {
+    background-color: #ffeb99;
+    outline: none;
+}
+
+/* Animación al hacer scroll */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.navbar ul li {
+    animation: slideIn 0.6s ease-out;
+}
+

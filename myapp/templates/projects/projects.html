@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehículos - AUTOSELECT</title>
+ <style>
+    /* Estilo general de la página */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal de los autos */
+.autos-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px; /* Espacio extra por la barra de navegación fija */
+}
+
+/* Estilo de cada auto */
+.auto-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Efecto de movimiento al pasar el puntero */
+.auto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del auto */
+.auto-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Información del auto */
+.auto-info {
+    margin-top: 15px;
+}
+
+.auto-info h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 5px 0;
+}
+
+.auto-info p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Nombre, modelo y precio */
+.auto-info .price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #0A74DA;
+    margin-top: 10px;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 960px) {
+    .autos-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .autos-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .autos-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+ </style>
+</head>
+<body>
+
+    {% extends 'layouts/base.html' %}
+
+    {% block content %}
+    
+        <!-- Contenedor de los autos -->
+        <div class="autos-container">
+            {% for project in projects %}
+            <div class="auto-card">
+                <div class="auto-info">
+                    <h3>{{ project.name }}</h3>
+                    <p>Marca: {{ project.brand }}</p>
+                    <p>Modelo: {{ project.model }}</p>
+                    <p class="price">${{ project.price }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+    {% endblock %}
+
+</body>
+</html>
+

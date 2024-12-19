@@ -1,0 +1,326 @@
+{% extends 'layouts/base.html' %}
+
+{% load static%}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros - AUTOSELECT</title>
+  <style>
+    /* Estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background: black; 
+        color: #fff;
+        line-height: 1.6;
+      }       
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    /* Sección Hero */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 500px; /* Altura fija para igualar con las otras secciones */
+      background-color: #0A74DA;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .hero h1 {
+      font-size: 5em;
+      margin-bottom: 15px;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.7em;
+      font-weight: 300;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+      margin-bottom: 30px;
+    }
+
+    .hero .cta-btn {
+      padding: 15px 40px;
+      background-color: #FFD700;
+      color: #0A74DA;
+      font-size: 1.3em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .hero .cta-btn:hover {
+      background-color: #0A74DA;
+      color: #fff;
+    }
+
+    /* Sección Nosotros */
+    .about {
+      background: #fff;
+      padding: 80px 20px;
+      text-align: center;
+      animation: slideIn 1.5s ease-out;
+      background: url("{% static 'audos.jpg'%}") no-repeat center center/cover;
+      background-size: cover;
+      color: white;
+      min-height: 500px; /* Altura fija para igualar con las otras secciones */
+    }
+
+    .about h2 {
+      font-size: 3.5em;
+      color: #FFD700;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .about p {
+      font-size: 1.3em;
+      line-height: 1.8;
+      color: #f7f7f7;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+
+    /* Sección Qué ofrecemos */
+    .offerings {
+      background: #0A74DA;
+      padding: 80px 20px;
+      color: #fff;
+      text-align: center;
+      animation: fadeIn 2s ease-out;
+      min-height: 500px; /* Altura fija para igualar con las otras secciones */
+    }
+
+    .offerings h2 {
+      font-size: 3.5em;
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+
+    .offerings ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1em;
+      text-align: left;
+    }
+
+    .offerings ul li {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3em;
+    }
+
+    .offerings ul li::before {
+      content: '✓';
+      color: #FFD700;
+      font-weight: bold;
+      font-size: 1.5em;
+      margin-right: 15px;
+    }
+
+    /* Sección Misión y Visión */
+    .mission-vision {
+      padding: 60px 20px;
+      background-color: #f7f7f7;
+      text-align: center;
+      animation: fadeIn 2s ease-out;
+      min-height: 500px; /* Altura fija para igualar con las otras secciones */
+    }
+
+    .mission-vision h2 {
+      font-size: 3.5em;
+      color: #0A74DA;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .mission-vision .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .mission-vision .card {
+      background-color: #0A74DA;
+      color: #fff;
+      padding: 40px;
+      width: 45%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .mission-vision .card:hover {
+      transform: scale(1.05);
+    }
+
+    .mission-vision .card h3 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .mission-vision .card p {
+      font-size: 1.2em;
+    }
+
+    /* Sección Testimonios */
+    .testimonials {
+      padding: 60px 20px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      animation: fadeIn 2s ease-out;
+      min-height: 500px; /* Altura fija para igualar con las otras secciones */
+    }
+
+    .testimonials h2 {
+      font-size: 3.5em;
+      color: #FFD700;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .testimonials .testimonial {
+      background-color: #444;
+      padding: 30px;
+      margin: 20px 0;
+      border-radius: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .testimonials .testimonial p {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    .testimonials .testimonial strong {
+      font-size: 1.2em;
+      color: #FFD700;
+    }
+
+    /* Pie de página */
+    .footer {
+      background-color: #0A74DA;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+      animation: fadeIn 2s ease-out;
+      min-height: 200px; /* Altura fija para igualar con las otras secciones */
+    }
+
+    .footer p {
+      font-size: 1.2em;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Sección Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Conoce a AUTOSELECT</h1>
+      <p>La agencia automotriz líder con más de 10 años ofreciendo vehículos de calidad, ¡donde la experiencia de compra es nuestra prioridad!</p>
+    </div>
+  </section>
+
+  <!-- Sección Nosotros -->
+  <section class="about">
+    <h2>¿Quiénes somos?</h2>
+    <p>En **AUTOSELECT**, somos una agencia automotriz dedicada a ofrecer lo mejor en vehículos nuevos y seminuevos. Nuestra misión es proporcionarte el mejor servicio, brindándote una experiencia de compra memorable. Nos enorgullece ofrecer calidad, confianza y atención personalizada a cada uno de nuestros clientes.</p>
+  </section>
+
+  <!-- Sección Qué ofrecemos -->
+  <section class="offerings">
+    <h2>¿Qué ofrecemos?</h2>
+    <ul>
+      <li><strong>Vehículos Nuevos y Seminuevos:</strong> Con garantía de calidad y revisados por expertos.</li>
+      <li><strong>Financiación Flexible:</strong> Opciones de pago que se ajustan a tus necesidades.</li>
+      <li><strong>Precios Competitivos:</strong> Ofrecemos los mejores precios del mercado.</li>
+      <li><strong>Garantía Extendida:</strong> Vehículos con garantía para tu tranquilidad.</li>
+    </ul>
+  </section>
+
+  <!-- Sección Misión y Visión -->
+  <section class="mission-vision">
+    <h2>Nuestra Misión y Visión</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Misión</h3>
+        <p>Proporcionar vehículos de calidad con el mejor servicio al cliente, ayudando a nuestros clientes a tomar la mejor decisión al momento de comprar su auto.</p>
+      </div>
+      <div class="card">
+        <h3>Visión</h3>
+        <p>Ser la agencia automotriz más confiable de la región, ofreciendo la mejor experiencia de compra y un servicio que supere las expectativas de nuestros clientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Testimonios -->
+  <section class="testimonials">
+    <h2>Testimonios de nuestros clientes</h2>
+    <div class="testimonial">
+      <p>"Excelente atención y servicio. Encontré el auto perfecto para mi familia gracias a **AUTOSELECT**. ¡Altamente recomendados!"</p>
+      <p><strong>- Mariana López</strong></p>
+    </div>
+    <div class="testimonial">
+      <p>"Muy satisfecho con la compra y el proceso. ¡Gracias a todo el equipo de AUTOSELECT por hacerlo tan fácil y rápido!"</p>
+      <p><strong>- Roberto Martínez</strong></p>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <p>&copy; 2024 AUTOSELECT - Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>
+
+
+
+
+
+{% endblock %}

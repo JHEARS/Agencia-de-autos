@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django projects</title>
+    <link rel="stylesheet" href="{% static 'styles/barra.css' %}">
+</head>
+<body>
+    
+    <nav class="navbar container">
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">INICIO</a>
+            </li>
+            <li>
+                <a href="{% url 'about' %}">NOSOTROS</a>
+            </li>
+            <li>
+                <a href="{% url 'projects' %}">AUTOS</a>
+            </li>
+            <li>
+                <a href="{% url 'create_task' %}">CONTACTANOS</a>
+            </li>
+            <li>
+                <a href="{% url 'create_project' %}">SERVICIOS</a>
+            </li>
+        </ul>
+    </nav>
+    
+<main class="container">
+    {% block content %}
+    {% endblock %}
+</main>
+
+</body>
+</html>
